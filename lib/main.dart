@@ -22,17 +22,25 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.black,
-        child: Column(
-          children: [
-            Container(
-              height: 202,
-              width: 202,
-              color: Colors.yellow,
-            )
-          ],
-        ),
+      body: Column(
+        children: [
+          Flexible(
+            child: Center(
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: 4,
+                itemBuilder: (context, index) => Container(
+                  height: 100,
+                  color: Colors.red,
+                ),
+                separatorBuilder: (context, index) => Container(
+                  height: 20,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
